@@ -49,7 +49,7 @@ if(mysqli_num_rows($result) > 0){
 
 <body>
     <header>
-
+<h1 class="text-center">Big Library of Vienna Database</h1>
        
 
 <div class="container">
