@@ -1,13 +1,13 @@
 <?php
-function file_upload($picture){
+    function file_upload($picture){
         $result = new stdClass();
         $result->fileName = "defaultpicture.jpg";
-        $result->error = 1;
+        $result->error = true;
         $fileName = $picture["title"];
         $fileType = $picture["type"];
         $fileError = $picture["error"];
         $fileSize = $picture["size"];
-
+        $fileTempName = $picture["tmp_name"];
         $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
         $filesAccepted = ["png", "jpg", "jpeg"];
@@ -19,7 +19,13 @@ function file_upload($picture){
             if(in_array($fileExtension, $filesAccepted)){
                 if($fileError == 0){
                     if($fileSize < 500000){
-                        $fileNewName = uniqid();
+                        $fileNewName = uniqid("") . "." . $fileExtension;
+                        $to = "pictures/$fileNewName";
+                        if(move_uploaded_file($fileTempName, $to)){
+                            $result->error = false;
+                            $result->fileName = $fileNewName;
+                            return $result;
+                        }
                     }else {
                         $result->errorMessage = "Please choose a smaller picture. Maximum = 500kb";
                     }
