@@ -25,6 +25,16 @@ $row = mysqli_fetch_assoc($result);
 
 <body>
     <header>
+        <div class="container">
+        <div class="card" style="width: 18rem;">
+            <img src="pictures/<?= $row["picture"] ?> class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title"><?= $row["title"] ?></h5>
+            <p class="card-text"><?= $row["description"] ?></p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>
+        </div>
     </header>
     <main>
     </main>
