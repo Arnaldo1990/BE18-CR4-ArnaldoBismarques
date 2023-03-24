@@ -25,7 +25,7 @@ if(mysqli_query($connect, $sql)){
     echo "Smth went wrong";
 }
 }
-
+xxx
 ?>
 
 <!DOCTYPE html>
