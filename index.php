@@ -18,9 +18,9 @@ if(mysqli_num_rows($result) > 0){
                     <td>{$row["type"]}</td>
                     <td>{$row["author_last_name"]}</td>
                     <td>{$row["publisher_name"]}</td>
-                    <td>Edit</td>
-                    <td>Details</td>
-                    <td>Delete</td>
+                    <td><a class='btn btn-outline-success' href='edit.php?id={$row["id"]}'>Edit</a></td>
+                    <td><a class='btn btn-outline-warning' href='details.php?id={$row["id"]}'>Details</a></td>
+                    <td><a class='btn btn-outline-danger' href='delete.php?id={$row["id"]}'>Delete</a></td>
 
 
                 </tr>
