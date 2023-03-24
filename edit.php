@@ -19,7 +19,7 @@
             $publisher_address = $_POST["publisher_address"];
             $publish_date = $_POST["publish_date"];
 
-            $picture = file_upload($_FILES["picture"]);
+            $picture = file_upload($_FILES["picture"], "update");
             if($picture->error == 0){
                 if($row["picture"] != "defaultpicture.jpg"){
                     unlink("pictures/{$row["picture"]}");
