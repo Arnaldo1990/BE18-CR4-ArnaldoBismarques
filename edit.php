@@ -1,12 +1,38 @@
 <?php
 
         require "db_connect.php";
+        require "file_upload.php";
+
 
         $id = $_GET["id"];
         $sql = "SELECT * FROM media WHERE id = $id";
         $result = mysqli_query($connect, $sql);
         $row = mysqli_fetch_assoc($result);
+        
+        if(isset($_POST["submit"])){
+            $title = $_POST["title"];
+            $isbn = $_POST["ISBN"];
+            $type = $_POST["type"];
+            $author_first_name = $_POST["author_first_name"];
+            $author_last_name = $_POST["author_last_name"];
+            $publisher = $_POST["publisher_name"];
+            $publisher_address = $_POST["publisher_address"];
+            $publish_date = $_POST["publish_date"];
 
+            $picture = file_upload($_FILES["picture"]);
+            if($picture->error == 0){
+                if($row["picture"] != "defaultpicture.jpg"){
+                    unlink("pictures/{$row["picture"]}");
+
+                    $sqlUpdate = "UPDATE `media` SET `id`=`title`='$title',`picture`='$picture->fileName',`ISBN`='$isbn',`type`='$type',`author_first_name`='$author_first_name',`author_last_name`='$author_last_name',`publisher_name`='$publisher',`publisher_address`='$publisher_address',`publish_date`='$publish_date' WHERE id = $id";
+                }
+            }else {
+                $sqlUpdate = "UPDATE `media` SET `id`=`title`='$name',`ISBN`='$isbn',`type`='$type',`author_first_name`='$author_first_name',`author_last_name`='$author_last_name',`publisher_name`='$publisher',`publisher_address`='$publisher_address',`publish_date`='$publish_date' WHERE id = $id";
+            }
+            if(mysqli_query($connect, $sqlUpdate)){
+                header("Location: index.php");
+            }
+        }
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +60,7 @@
                         <input type="text" placeholder="Insert author firstname" class="form-control" name="author_first_name" value="<?= $row["author_first_name"]?>">
                         <input type="text" placeholder="Insert author lastname" class="form-control" name="author_last_name" value="<?= $row["author_last_name"]?>">
                         <input type="text" placeholder="Publisher" class="form-control" name="publisher_name" value="<?= $row["publisher_name"]?>">
-                        <input type="text" placeholder="Publisher Address" class="form-control" name="publisher_address" value="<?= $row["publisher_name"]?>">
+                        <input type="text" placeholder="Publisher Address" class="form-control" name="publisher_address" value="<?= $row["publisher_address"]?>">
                         <input type="Date" placeholder="YYYY-MM-DD" class="form-control" name="publish_date" value="<?= $row["publish_date"]?>">
                         <input type="file" class="form-control" name="picture">
 
