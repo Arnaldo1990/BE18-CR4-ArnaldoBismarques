@@ -8,9 +8,26 @@ $result = mysqli_query($connect, $sql);
 $body = "";
 
 if(mysqli_num_rows($result) > 0){
-$body .="I have found results";
+        // $body .="I have found results";
+        while($row = mysqli_fetch_assoc($result)){
+            $body.= "
+                <tr>
+                    <td>{$row["id"]}</td>
+                    <td>{$row["title"]}</td>
+                    <td>{$row["ISBN"]}</td>
+                    <td>{$row["type"]}</td>
+                    <td>{$row["author_last_name"]}</td>
+                    <td>{$row["publisher_name"]}</td>
+                    <td>Edit</td>
+                    <td>Details</td>
+                    <td>Delete</td>
+
+
+                </tr>
+            ";
+        }
 }else{
-        $body.= "No results";
+        $body.= "<tr><td colspan='9'>No results</td></tr>";
 }
 
 ?>
@@ -33,32 +50,33 @@ $body .="I have found results";
 <body>
     <header>
 
-        <?php
-            echo $body
-        ?>
+       
 
 <div class="container">
-<table class="table table-dark table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Picture</th>
-      <th scope="col">ISBN</th>
-      <th scope="col">Description</th>
-      <th scope="col">Type</th>
-      <th scope="col">Author</th>
-      <th scope="col">Publisher</th>
-      <th scope="col">Publisher Address</th>
-      <th scope="col">Publishing Date</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Details</th>
-      <th scope="col">Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-  </tbody>
-</table>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <!-- <th scope="col">Picture</th> -->
+                <th scope="col">ISBN</th>
+                <!-- <th scope="col">Description</th> -->
+                <th scope="col">Type</th>
+                <th scope="col">Author</th>
+                <th scope="col">Publisher</th>
+                <!-- <th scope="col">Publisher Address</th> -->
+                <!-- <th scope="col">Publishing Date</th> -->
+                <th scope="col">Edit</th>
+                <th scope="col">Details</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+            <tbody>
+                <?php
+                    echo $body
+                ?>
+            </tbody>
+    </table>
 </div>
     </header>
     <main>
