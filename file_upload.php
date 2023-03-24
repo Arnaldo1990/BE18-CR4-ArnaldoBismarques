@@ -1,5 +1,5 @@
 <?php
-    function file_upload($picture){
+    function file_upload($picture, $action = "create"){
         $result = new stdClass();
         $result->fileName = "defaultpicture.jpg";
         $result->error = true;
@@ -20,7 +20,13 @@
                 if($fileError == 0){
                     if($fileSize < 500000){
                         $fileNewName = uniqid("") . "." . $fileExtension;
-                        $to = "pictures/$fileNewName";
+
+                        
+                        if($action == "create"){
+                            $to = "../pictures/$fileNewName";
+                        }else {
+                            $to = "pictures/$fileNewName";
+                        }
                         if(move_uploaded_file($fileTempName, $to)){
                             $result->error = false;
                             $result->fileName = $fileNewName;
