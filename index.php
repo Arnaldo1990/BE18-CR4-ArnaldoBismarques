@@ -49,7 +49,7 @@ if(mysqli_num_rows($result) > 0){
 
 <body>
     <header>
-<h1 class="text-center">Database of B.I.G Viennese Library</h1>
+<h1 class="text-center">Database of <B class="I G"></B> Viennese Library</h1>
        
 
 <div class="container">
