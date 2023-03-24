@@ -37,6 +37,29 @@ $body .="I have found results";
             echo $body
         ?>
 
+<div class="container">
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Picture</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Author</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Publisher Address</th>
+      <th scope="col">Publishing Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Details</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+</div>
     </header>
     <main>
     </main>
