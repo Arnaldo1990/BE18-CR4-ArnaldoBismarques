@@ -30,7 +30,7 @@ $row = mysqli_fetch_assoc($result);
             <img src="pictures/<?= $row["picture"] ?> class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title"><?= $row["title"] ?></h5>
-            <p class="card-text"><?= $row["description"] ?></p>
+            <p class="card-text"><?= $row["short_description"] ?></p>
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>
 </div>
