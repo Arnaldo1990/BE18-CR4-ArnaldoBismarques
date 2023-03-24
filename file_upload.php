@@ -3,7 +3,7 @@
         $result = new stdClass();
         $result->fileName = "defaultpicture.jpg";
         $result->error = true;
-        $fileName = $picture["title"];
+        $fileName = $picture["name"];
         $fileType = $picture["type"];
         $fileError = $picture["error"];
         $fileSize = $picture["size"];
