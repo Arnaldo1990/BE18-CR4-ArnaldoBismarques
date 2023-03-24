@@ -1,12 +1,12 @@
-<?php
-if(isset($_POST["submit"])){
-    $name = $_POST["title"];
-    $author = $_POST["author_last_name"];
-    $publisher = $_POST["publisher_name"];
-    $picture = $_FILES["picture"];
+<!-- <?php
+// if(isset($_POST["submit"])){
+//     $name = $_POST["title"];
+//     $author = $_POST["author_last_name"];
+//     $publisher = $_POST["publisher_name"];
+//     $picture = $_FILES["picture"];
 
-}
-?>
+// }
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +26,15 @@ if(isset($_POST["submit"])){
        
         <div class="container">
             <h1 class="text-center">Add Media</h1>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form method="post" action="a_create.php" enctype="multipart/form-data">
                         <input type="text" placeholder="Fill in media title" class="form-control" name="title">
-                        <input type="text" placeholder="Insert author" class="form-control" name="author_last_name">
+                        <input type="number" placeholder="ISBN" class="form-control" name="ISBN">
+                        <input type="text" placeholder="Type" class="form-control" name="type">
+                        <input type="text" placeholder="Insert author firstname" class="form-control" name="author_first_name">
+                        <input type="text" placeholder="Insert author lastname" class="form-control" name="author_last_name">
                         <input type="text" placeholder="Publisher" class="form-control" name="publisher_name">
+                        <input type="text" placeholder="Publisher Address" class="form-control" name="publisher_address">
+                        <!-- <input type="Date" placeholder="YYYY-MM-DD" class="form-control" name="publisher_date"> -->
                         <input type="file" class="form-control" name="picture">
 
                         <input type="submit" class="btn btn-outline-dark" name="submit" value="Save">
