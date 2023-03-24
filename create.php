@@ -34,7 +34,7 @@
                         <input type="text" placeholder="Insert author lastname" class="form-control" name="author_last_name">
                         <input type="text" placeholder="Publisher" class="form-control" name="publisher_name">
                         <input type="text" placeholder="Publisher Address" class="form-control" name="publisher_address">
-                        <!-- <input type="Date" placeholder="YYYY-MM-DD" class="form-control" name="publisher_date"> -->
+                        <input type="Date" placeholder="YYYY-MM-DD" class="form-control" name="publish_date">
                         <input type="file" class="form-control" name="picture">
 
                         <input type="submit" class="btn btn-outline-dark" name="submit" value="Save">
