@@ -29,16 +29,16 @@
             <h1 class="text-center">Update Media</h1>
                     <form method="post" enctype="multipart/form-data">
                         <input type="text" placeholder="Fill in media title" class="form-control" name="title" value="<?= $row["title"]?>">
-                        <input type="number" placeholder="ISBN" class="form-control" name="ISBN">
-                        <input type="text" placeholder="Type" class="form-control" name="type">
-                        <input type="text" placeholder="Insert author firstname" class="form-control" name="author_first_name">
-                        <input type="text" placeholder="Insert author lastname" class="form-control" name="author_last_name">
-                        <input type="text" placeholder="Publisher" class="form-control" name="publisher_name">
-                        <input type="text" placeholder="Publisher Address" class="form-control" name="publisher_address">
-                        <input type="Date" placeholder="YYYY-MM-DD" class="form-control" name="publish_date">
+                        <input type="number" placeholder="ISBN" class="form-control" name="ISBN" value="<?= $row["ISBN"]?>">
+                        <input type="text" placeholder="Type" class="form-control" name="type" value="<?= $row["type"]?>">
+                        <input type="text" placeholder="Insert author firstname" class="form-control" name="author_first_name" value="<?= $row["author_first_name"]?>">
+                        <input type="text" placeholder="Insert author lastname" class="form-control" name="author_last_name" value="<?= $row["author_last_name"]?>">
+                        <input type="text" placeholder="Publisher" class="form-control" name="publisher_name" value="<?= $row["publisher_name"]?>">
+                        <input type="text" placeholder="Publisher Address" class="form-control" name="publisher_address" value="<?= $row["publisher_name"]?>">
+                        <input type="Date" placeholder="YYYY-MM-DD" class="form-control" name="publish_date" value="<?= $row["publish_date"]?>">
                         <input type="file" class="form-control" name="picture">
 
-                        <input type="submit" class="btn btn-outline-dark" name="submit" value="Save">
+                        <input type="submit" class="btn btn-outline-dark" name="submit" value="Update">
 
 
                     </form>
