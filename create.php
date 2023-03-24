@@ -32,7 +32,7 @@ if(isset($_POST["submit"])){
                         <input type="text" placeholder="Publisher" class="form-control" name="publisher_name">
                         <input type="file" class="form-control" name="picture">
 
-                        <input type="submit" class="btn btn-outline-dark" name="submit" value="Finish adding">
+                        <input type="submit" class="btn btn-outline-dark" name="submit" value="Save">
 
 
                     </form>
