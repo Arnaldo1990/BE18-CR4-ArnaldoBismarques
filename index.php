@@ -53,6 +53,7 @@ if(mysqli_num_rows($result) > 0){
        
 
 <div class="container">
+    <a class="btn btn-outline-primary"href="create.php">Order a Book</a>
     <table class="table table-dark table-striped">
         <thead>
             <tr>
