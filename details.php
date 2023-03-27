@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
     <header>
         <div class="container">
         <div class="card" style="width: 18rem;">
-            <img src="pictures/<?= $row["picture"] ?> class="card-img-top" alt="...">
+            <img src="pictures/<?= $row["picture"] ?>" class="card-img-top" alt=" <?= $row["title"] ?> ">
             <div class="card-body">
             <h5 class="card-title"><?= $row["title"] ?></h5>
             <p class="card-text"><?= $row["short_description"] ?></p>

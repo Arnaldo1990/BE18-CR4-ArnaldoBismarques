@@ -23,7 +23,7 @@
 
                         
                         if($action == "create"){
-                            $to = "../pictures/$fileNewName";
+                            $to = "pictures/$fileNewName";
                         }else {
                             $to = "pictures/$fileNewName";
                         }
